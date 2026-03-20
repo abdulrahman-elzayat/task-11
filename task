@@ -1,0 +1,230 @@
+using Microsoft.EntityFrameworkCore;
+using task_11.Data;
+
+namespace task_11
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ApplicationDbContext _context = new ApplicationDbContext();
+            #region Q1
+            //var customersList = _context.Customers
+            //.Select(c => new { c.FirstName, c.LastName, c.Email })
+            //.ToList();
+
+            //foreach (var item in customersList)
+            //{
+            //    Console.WriteLine($"{item.FirstName} {item.LastName} - {item.Email}");
+            //}
+            #endregion
+            #region     Q2
+
+            //var staffOrders = _context.Orders
+            //.Where(o => o.StaffId == 3)
+            //.ToList();
+
+            //foreach (var order in staffOrders)
+            //{
+            //    Console.WriteLine($"Order ID: {order.OrderId} | Date: {order.OrderDate}");
+            //}
+            #endregion
+            #region Q3 
+            //var mountainBikes = _context.Products
+            //.Where(p => p.Category.CategoryName == "Mountain Bikes")
+            //.ToList();
+
+            //foreach (var product in mountainBikes)
+            //{
+            //    Console.WriteLine($"Product: {product.ProductName} | Price: {product.ListPrice}");
+            //}
+            #endregion
+            #region Q4
+            //var ordersPerStore = _context.Orders
+            //.GroupBy(o => o.Store.StoreName)
+            //.Select(g => new {
+            // StoreName = g.Key,
+            // TotalOrders = g.Count()
+            //   })
+            // .ToList();
+            //foreach (var item in ordersPerStore)
+            //{
+            //    Console.WriteLine($"Store: {item.StoreName} | Orders Count: {item.TotalOrders}");
+            //}
+            #endregion
+            #region Q5
+            //var pendingOrders = _context.Orders
+            //.Where(o => o.ShippedDate == null)
+            //.ToList();
+
+            //foreach (var order in pendingOrders)
+            //{
+            //    Console.WriteLine($"Order ID: {order.OrderId} | Status: Pending Shipment");
+            //}
+            #endregion
+            #region Q6
+            //var customerInfo = _context.Customers
+            //.Select(c => new{
+            // FullName = c.FirstName + " " + c.LastName,
+            // OrderCount = c.Orders.Count() })
+            // .ToList();
+
+            //foreach (var item in customerInfo)
+            //{
+            //    Console.WriteLine($"Customer: {item.FullName} | Orders: {item.OrderCount}");
+            //}
+            #endregion
+            #region Q7
+            //var unusedProducts = _context.Products
+            //.Where(p => !p.OrderItems.Any())
+            //.ToList();
+
+            //foreach (var item in unusedProducts)
+            //{
+            //    Console.WriteLine($"Product: {item.ProductName}");
+            //}
+            #endregion
+            #region Q8
+            // var lowStock = _context.Stocks
+            //.Where(s => s.Quantity < 5)
+            //.Select(s => new {
+            // s.Product.ProductName,
+            // s.Store.StoreName,
+            // s.Quantity
+            //  })
+            // .ToList();
+
+            // foreach (var item in lowStock)
+            // {
+            //     Console.WriteLine($"Product: {item.ProductName} | Store: {item.StoreName} | Quantity: {item.Quantity}");
+            // }
+            #endregion #region MyRegion
+            #region Q9
+            //var item = _context.Products.OrderBy
+            //(p => p.ProductId).FirstOrDefault();
+            //Console.WriteLine(item.ProductId);
+            #endregion
+            #region Q10
+            //var productsByYear = _context.Products
+            //.Where(p => p.ModelYear == 2016)
+            //.ToList();
+
+            //foreach (var ite in productsByYear)
+            //{
+            //    Console.WriteLine(item.ProductName);
+            //}
+            #endregion
+            #region Q11
+            //var productOrdersCount = _context.Products
+            // .Select(p => new{
+            //  p.ProductName,
+            //  OrderCount = p.OrderItems.Count()
+            //  })
+            //  .ToList();
+            //  foreach (var item in productOrdersCount)
+            //{
+            //    Console.WriteLine($"Product: {item.ProductName} Times Ordered: {item.OrderCount}");
+            //}
+            #endregion#region MyRegion
+            #region Q12
+            //var productCount = _context.Products
+            //.Where(p => p.CategoryId == 1)
+            //.Count();
+            //Console.WriteLine(productCount);
+            #endregion
+            #region Q13
+            //var averagePrice = _context.Products
+            //.Average(p => p.ListPrice);
+            //Console.WriteLine(averagePrice);
+            #endregion
+            #region Q14
+            //var item = _context.Products.Find(10);
+            //Console.WriteLine(item.ProductName);
+            #endregion
+            #region Q15
+            //var orderItemsList = _context.OrderItems
+            //.Where(item => item.Quantity > 3)
+            //.Select(item => new {
+            // ProductName = item.Product.ProductName,
+            // QuantitySold = item.Quantity
+            //  })
+            // .ToList();
+
+            //foreach (var item in orderItemsList)
+            //{
+            //    Console.WriteLine("Product: " + item.ProductName + " | Quantity: " + item.QuantitySold);
+            //}
+            #endregion
+            #region Q16
+            //var staffOrdersList = _context.Staffs
+            //.Select(staff => new {
+            // FullName = staff.FirstName + " " + staff.LastName,
+            // TotalOrders = staff.Orders.Count()
+            // })
+            // .ToList();
+
+            // foreach (var item in staffOrdersList)
+            // {
+            //    Console.WriteLine("Staff: " + item.FullName + " | Total Orders: " + item.TotalOrders);
+            // }
+            #endregion
+            #region Q17
+            //var activeStaffList = _context.Staffs
+            //.Where(staff => staff.Active == 1)
+            //.Select(staff => new {
+            // FirstName = staff.FirstName,
+            // PhoneNumber = staff.Phone
+            // })
+            // .ToList();
+
+            //  foreach (var item in activeStaffList)
+            //  {
+            //   Console.WriteLine("Name: " + item.FirstName + " | Phone: " + item.PhoneNumber);
+            //   }
+            #endregion
+            #region Q18
+
+            //var productsWithDetailsList = _context.Products
+            //.Select(product => new {
+            // ProductName = product.ProductName,
+            // BrandName = product.Brand.BrandName,
+            // CategoryName = product.Category.CategoryName
+            // })
+            // .ToList();
+
+            //foreach (var item in productsWithDetailsList)
+            //{
+            //    Console.WriteLine("Product: " + item.ProductName + " | Brand: " + item.BrandName + " | Category: " + item.CategoryName);
+            //}
+            #endregion
+            #region Q19
+            //var completedOrdersList = _context.Orders
+            //.Where(order => order.OrderStatus == 4)
+            //.Select(order => new {
+            // OrderId = order.OrderId,
+            // OrderDate = order.OrderDate
+            // })
+            //.ToList();
+
+            //foreach (var item in completedOrdersList)
+            //{
+            //    Console.WriteLine("Order ID: " + item.OrderId + " | Date: " + item.OrderDate);
+            //}
+            #endregion
+            #region Q20
+            //var productSalesSummary = _context.Products
+            //.Select(product => new {
+            // ProductName = product.ProductName,
+            // TotalQuantitySold = product.OrderItems.Sum(item => item.Quantity)
+            // })
+            // .ToList();
+
+            //foreach (var item in productSalesSummary)
+            //{
+            //    Console.WriteLine("Product: " + item.ProductName + " | Total Quantity Sold: " + item.TotalQuantitySold);
+            //}
+            #endregion
+
+        }
+    }
+}
