@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML Form Example</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        fieldset { margin-bottom: 15 index; padding: 10px; border: 3px solid #0e0d0d; }
+        legend { font-weight: bold; }
+        .row { margin-bottom: 10px; }
+        label { display: inline-block; width: 150px; }
+    </style>
+</head>
+<body>
+
+    <h2>HTML Form Example</h2>
+    <p>This is an example of an HTML5 form containing various input controls:</p>
+
+    <form>
+        <fieldset>
+            <legend>User Information</legend>
+            <div class="row">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="row">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="row">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Contact Information</legend>
+            <div class="row">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="row">
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" cols="50"></textarea>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Subscription</legend>
+            <div class="row">
+                <input type="checkbox" id="news1" name="news1">
+                <label for="news1" style="width: auto;">Subscribe to newsletter:</label>
+            </div>
+            <div class="row">
+                <input type="checkbox" id="news2" name="news2">
+                <label for="news2" style="width: auto;">Subscribe to newsletter:</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Preferred Language</legend>
+            <div class="row">
+                <label for="lang">Select your preferred language:</label>
+                <select id="lang" name="lang">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Feedback</legend>
+            <div class="row">
+                <label for="rate">Rate our service:</label>
+                <input type="range" id="rate" name="rate" min="0" max="10">
+            </div>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+
+    </form>
+
+</body>
+</html>
